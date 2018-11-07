@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   end
 
   def delete_user
-  	user.destroy
+  	u = User.find(params[:id])
+  	u.destroy
+  	redirect_to pages_dashboard_path
   end
 end
