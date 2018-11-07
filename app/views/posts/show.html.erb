@@ -35,7 +35,12 @@
 				<br>
 				<%= comment.content %>
 				<div class="text-right">
-					<%= link_to 'Eliminar', post_comment_path(@post,comment), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar el Comentario?' }, class: 'btn btn-xs btn-danger' %>
+          <% if can? :destroy, comment %>
+						<%= link_to 'Eliminar', post_comment_path(@post,comment), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar el Comentario?' }, class: 'btn btn-xs btn-danger' %>
+          <% end %>
+
+
+
 				</div>
 			</div>
 		<% end %>
