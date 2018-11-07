@@ -31,8 +31,12 @@
 	      <a class="navbar-brand" href="<%= root_url %>">
 	      	<span class="glyphicon glyphicon-home"></span> Mi Blog
 	      </a>
-
-
+	      
+	      <% if !current_user.nil? %>
+		      <% if current_user.admin? %>
+		      	<a class="navbar-brand" href="<%= pages_dashboard_path %>"> Dashboard</a>
+		      <% end %>
+	      <% end %>
 	    </div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

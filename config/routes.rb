@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'pages/dashboard'
   delete 'pages/delete_user/:id', to: 'pages#delete_user', as: 'delete_user'
+  get 'pages/edit_user/:id', to: 'pages#edit_user', as: 'edit_user'
 
 	resources :posts do
 		resources :comments, only: [:create, :destroy]

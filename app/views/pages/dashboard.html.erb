@@ -17,7 +17,7 @@
         <td><%= user.email %></td>
         <td><%= user.role %></td>
         
-        <td><%= link_to 'Editar', '', class: 'btn btn-sm btn-success' %></td>
+        <td><%= link_to 'Editar Role', edit_user_path(user), class: 'btn btn-sm btn-success' %></td>
         <td><%= link_to 'Eliminar', delete_user_path(user), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar el Post?' }, class: 'btn btn-sm btn-danger' %></td>
       </tr>
     <% end %>
